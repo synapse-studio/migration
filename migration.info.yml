@@ -1,0 +1,9 @@
+name: migration
+description: 'Migration starter'
+type: module
+core: 8.x
+version: 1.0
+package: Synapse
+dependencies:
+  - migrate_tools
+  - migrate_plus

@@ -1,0 +1,4 @@
+migration.list:
+  title: 'Migrations List'
+  parent: migrate_tools.menu
+  route_name: migration.list

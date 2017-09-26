@@ -1,0 +1,31 @@
+# migration countrys.
+id: migration_node_country
+label: Node country
+migration_group: import
+dependencies:
+  enforced:
+    module:
+      - migration
+# migration_dependencies:
+#   required:
+#     - migration_taxonomy_catalog
+#     - migration_commerce_product_variation
+source:
+  plugin: migration_country
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: country
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: title
+  status: status
+  changed: changed
+  'body/value': body_value
+  'body/format': body_format

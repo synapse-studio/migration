@@ -1,0 +1,7 @@
+migration.list:
+  path: '/migration/list'
+  defaults:
+    _controller: '\Drupal\migration\Controller\PageMigrationsList::page'
+    _title: 'Migrations List'
+  requirements:
+    _permission: 'administer content'
