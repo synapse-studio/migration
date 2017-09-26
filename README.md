@@ -1,4 +1,4 @@
-# migration Starter
+# Migration Starter
 
 # 1. Установка:
 ## 1.1 Добавляем 2 модуля, они в зависимостях:
