@@ -24,5 +24,6 @@
 # 3. Картинки
 ## 3.1 Интерфейс migrate_tools
 <img src="https://github.com/politsin/help/blob/master/migration/migration-group.png?raw=true">
+
 ## 3.2 Интерфейс модуля
 <img src="https://github.com/politsin/help/blob/master/migration/migration-exec.png?raw=true">
