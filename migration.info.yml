@@ -8,3 +8,5 @@ dependencies:
   - migrate_tools
   - migrate_plus
   - yaml_editor
+config_devel:
+  - migrate_plus.migration.node_country
