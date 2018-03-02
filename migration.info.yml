@@ -7,3 +7,4 @@ package: Synapse
 dependencies:
   - migrate_tools
   - migrate_plus
+  - yaml_editor

@@ -1,4 +1,4 @@
-# migration countrys.
+# migration countries.
 id: migration_node_country
 label: Node country
 migration_group: import
@@ -8,24 +8,17 @@ dependencies:
       - migration
 # migration_dependencies:
 #   required:
-#     - migration_taxonomy_catalog
-#     - migration_commerce_product_variation
+#     - migration_taxonomy_world
 source:
   plugin: migration_country
 destination:
   plugin: entity:node
 process:
-  type:
-    plugin: default_value
-    default_value: country
-  sticky:
-    plugin: default_value
-    default_value: 0
-  uid:
-    plugin: default_value
-    default_value: 1
+  uid: uid
+  type: type
   title: title
   status: status
+  sticky: sticky
   changed: changed
   'body/value': body_value
   'body/format': body_format

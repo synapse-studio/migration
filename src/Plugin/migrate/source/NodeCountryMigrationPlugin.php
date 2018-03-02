@@ -29,6 +29,10 @@ class NodeCountryMigrationPlugin extends MigrationsSourceBase {
           $id = $row["alpha2Code"];
           $rows[$id] = [
             'uuid' => $id,
+            'type' => 'country',
+            'sticky' => 0,
+            'uid' => 1,
+            'status' => 1,
             'title' => $row["name"],
             'changed' => time(),
             'body_value' => FALSE,
