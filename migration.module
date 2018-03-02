@@ -4,3 +4,12 @@
  * @file
  * Contains migration.module.
  */
+
+use Drupal\migration\Hook\FormMigrationEditFormAlter;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function migration_form_migration_edit_form_alter(&$form, $form_state, $form_id) {
+  FormMigrationEditFormAlter::hook($form, $form_state, $form_id);
+}
