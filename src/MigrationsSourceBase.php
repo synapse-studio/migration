@@ -15,6 +15,9 @@ class MigrationsSourceBase extends SourcePluginBase {
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
+    // SourcePlugin Settings.
+    $this->trackChanges = TRUE;
+
     $uipage = $this->uiPage();
     $config = self::accessProtected($migration, 'pluginDefinition');
     $this->config = $config['process'];
@@ -23,9 +26,11 @@ class MigrationsSourceBase extends SourcePluginBase {
     $rows = $this->getRows();
     $this->rows = $rows;
     if ($this->uipage && $this->debug) {
-      dsm($plugin_id . ": ProcessMapping & Rows");
-      dsm($this->config);
-      dsm($rows);
+      if (\Drupal::moduleHandler()->moduleExists('devel')) {
+        dsm("{$plugin_id}: ProcessMapping & Rows");
+        dsm($this->config);
+        dsm($rows);
+      }
     }
   }
 
@@ -43,10 +48,15 @@ class MigrationsSourceBase extends SourcePluginBase {
    */
   public function uiPage() {
     $uipage = FALSE;
+    $statuspage = FALSE;
     if (\Drupal::routeMatch()->getRouteName() == "entity.migration.list") {
       $uipage = TRUE;
     }
+    if (\Drupal::routeMatch()->getRouteName() == "cmlmigrations.status") {
+      $statuspage = TRUE;
+    }
     $this->uipage = $uipage;
+    $this->statuspage = $statuspage;
     return $uipage;
   }
 
@@ -92,7 +102,6 @@ class MigrationsSourceBase extends SourcePluginBase {
   public function fields() {
     $fields = [
       'uuid' => $this->t('UUID Key'),
-      'id' => $this->t('ID Key'),
     ];
     return $fields;
   }
