@@ -1,9 +1,12 @@
 # Migration Starter
 
 # 1. Установка:
-## 1.1 Добавляем 2 модуля, они в зависимостях:
- * `composer require drupal/migrate_tools`
- * `composer require drupal/migrate_plus`
+## 1.1 Добавляем зависимости:
+```
+composer require 'drupal/migrate_tools:^4.0'
+composer require 'drupal/migrate_plus:^4.0'
+composer require 'drupal/yaml_editor:^1.0'
+```
 
 ## 1.2 Включаем и проверяем работоспособность:
   * `drush en migration` - вклю
@@ -14,8 +17,8 @@
 # 2. Работаем:
 
 ## 2.1 Работа с миграцими
-  * `drush mi migration_node_country` - импорт
-  * `drush mi migration_node_country --update` обновить, если что-то поменялось в выгрузке
+  * `drush mim migration_node_country` - импорт
+  * `drush mim migration_node_country --update` обновить, если что-то поменялось в выгрузке
   * `drush mr migration_node_country` - снести если что-то пошло не так
   * `drush mrs migration_node_country` - сбросить стаутс если что-то сломалось
   * `drush dre -y migration` - переустановить модуль, для переприменения конфигов
