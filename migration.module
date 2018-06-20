@@ -6,10 +6,18 @@
  */
 
 use Drupal\migration\Hook\FormMigrationEditFormAlter;
+use Drupal\migration\Hook\Cron;
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function migration_form_migration_edit_form_alter(&$form, $form_state, $form_id) {
   FormMigrationEditFormAlter::hook($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_cron().
+ */
+function migration_cron() {
+  Cron::hook();
 }
