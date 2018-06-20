@@ -28,7 +28,7 @@ class NodeCountryMigrationPlugin extends MigrationsSourceBase {
         if ($k++ < 700 || !$this->uipage) {
           $id = $row["alpha2Code"];
           $rows[$id] = [
-            'uuid' => $id,
+            'id' => $id,
             'type' => 'country',
             'sticky' => 0,
             'uid' => 1,
