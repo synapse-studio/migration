@@ -89,7 +89,7 @@ class MigrationsSourceBase extends SourcePluginBase {
    */
   public function getIDs() {
     return [
-      'uuid' => [
+      'id' => [
         'type' => 'string',
         'alias' => 'id',
       ],
@@ -101,7 +101,7 @@ class MigrationsSourceBase extends SourcePluginBase {
    */
   public function fields() {
     $fields = [
-      'uuid' => $this->t('UUID Key'),
+      'id' => $this->t('ID'),
     ];
     return $fields;
   }
